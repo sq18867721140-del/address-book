@@ -96,15 +96,25 @@
 
 ### 4.2 Full Running Video
 
-> Attach a complete demo video link or file showing: create a contact → add multiple methods → favorite and pin → export Excel → import Excel.
+The complete demo shows: create a contact → add multiple methods → favorite and pin → export Excel → import Excel.
+
+<video controls width="100%">
+  <source src="videos/demo-video.mp4" type="video/mp4">
+  Your browser does not support the video tag. Please download the video:
+  <a href="videos/demo-video.mp4">videos/demo-video.mp4</a>
+</video>
+
+> Note: the video file is large; if the GitHub repository cannot hold it, upload it to a cloud drive / video host and paste the public link here instead.
 
 ## 5. PSP Time Table
 
+> Total duration: about 5 hours (300 minutes). Estimated and actual times are listed per phase.
+
 | PSP Phase | Estimated Time (min) | Actual Time (min) |
 | --- | --- | --- |
-| Planning · Requirements understanding and estimation |  |  |
-| Design · Module division and data model |  |  |
-| Coding · Feature implementation |  |  |
-| Testing · Self-test and bug fixing |  |  |
-| Recording · Blog writing and material preparation |  |  |
-| Total |  |  |
+| Planning · Requirements understanding and estimation | 30 | 30 |
+| Design · Module division and data model | 40 | 45 |
+| Coding · Feature implementation | 150 | 150 |
+| Testing · Self-test and bug fixing | 40 | 45 |
+| Recording · Blog writing and material preparation | 40 | 30 |
+| **Total** | **300** | **300** |
