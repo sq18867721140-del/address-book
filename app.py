@@ -89,20 +89,35 @@ def fetch_methods(db, contact_id):
 
 @app.route("/")
 def index():
-    """Contact list: favorites on top, the rest by creation time descending."""
+    """Contact list: favorites on top, the rest by creation time descending.
+
+    Optional `q` query string filters contacts by name or note (case-insensitive).
+    """
     db = get_db()
-    contacts = db.execute(
-        """
-        SELECT * FROM contact
-        ORDER BY is_favorite DESC, created_at DESC, id DESC
-        """
-    ).fetchall()
+    query = request.args.get("q", "").strip()
+    if query:
+        like = f"%{query}%"
+        contacts = db.execute(
+            """
+            SELECT * FROM contact
+            WHERE name LIKE ? OR note LIKE ?
+            ORDER BY is_favorite DESC, created_at DESC, id DESC
+            """,
+            (like, like),
+        ).fetchall()
+    else:
+        contacts = db.execute(
+            """
+            SELECT * FROM contact
+            ORDER BY is_favorite DESC, created_at DESC, id DESC
+            """
+        ).fetchall()
 
     result = []
     for c in contacts:
         methods = fetch_methods(db, c["id"])
         result.append({"contact": c, "methods": methods})
-    return render_template("index.html", contacts=result, method_types=METHOD_TYPES)
+    return render_template("index.html", contacts=result, method_types=METHOD_TYPES, query=query)
 
 
 @app.route("/contact/new", methods=["GET", "POST"])
