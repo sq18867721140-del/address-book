@@ -10,6 +10,9 @@ instance/*.db
 # 演示视频体积过大，不纳入 Git；按需上传到云盘/视频托管后在博客贴链接
 videos/
 
+# 本地测试样例数据，不入库
+sample_contacts.xlsx
+
 # 编辑器 / 系统
 .vscode/
 .idea/

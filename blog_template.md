@@ -23,9 +23,7 @@
 ## 1. Project Links
 
 - GitHub repository: https://github.com/sq18867721140-del/address-book
-- Cloud deployment URL (optional extra-credit item): (Paste public URL; localhost does not count)
 - Code style guide: [codestyle.md](codestyle.md)
-- Other links: (Release tag link, etc.)
 
 ## 2. Commit History Statistics
 
@@ -69,10 +67,6 @@
 ### 3.5 Page Style (10 points)
 
 - Bootstrap 5 card layout, top navigation bar, flash messages, favorite star and button state indicators.
-
-### 3.6 Cloud Deployment (Optional +15)
-
-> If completed: record the cloud vendor, deployment method (Gunicorn + Nginx, etc.) and public URL. Delete this section if skipped.
 
 ## 4. Screenshots and Video
 
