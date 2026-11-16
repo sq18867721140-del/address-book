@@ -9,6 +9,7 @@ Course: Software Engineering (FZU–MU) · Extreme Programming Assignment
 - Multiple contact methods per contact (phone, email, social, address)
 - Excel export: one row per contact, columns for Name / Phone / Email / Social / Address / Note / Favorite
 - Excel import: read a file in the same format and append contacts
+- Search contacts by name or note
 - (Optional) Cloud server deployment
 
 ## Tech Stack
@@ -30,6 +31,18 @@ python app.py
 # 3. Open in the browser
 # http://127.0.0.1:5000
 ```
+
+## Self-Test
+
+A smoke script covers create, favorite, multiple methods, export and import:
+
+```bash
+python smoke_test.py
+```
+
+## Code Style
+
+See [codestyle.md](codestyle.md) for naming, Python and commit-message conventions.
 
 ## Directory Structure
 
