@@ -5,9 +5,9 @@
 | Item | Content |
 | --- | --- |
 | Course for This Assignment | Software Engineering (FZU–MU) |
-| Team Name | (Fill in team name) |
-| Assignment Requirements | Build a web address book: favorite contacts, bind multiple contact methods to one contact, Excel import/export, optional cloud deployment; complete collaborative Git development and submit an individual blog. |
-| Objectives of This Assignment | Experience the extreme programming and team development workflow; practice module division, Git version control, feature design rationale, and project retrospective. |
+| Project Type | Individual project |
+| Assignment Requirements | Build a web address book: favorite contacts, bind multiple contact methods to one contact, Excel import/export, optional cloud deployment; complete Git version-controlled development and submit an individual blog. |
+| Objectives of This Assignment | Experience the extreme programming development workflow; practice module division, Git version control, feature design rationale, and project retrospective. |
 | Other References | Flask official docs, openpyxl docs, Bootstrap docs; course requirement Programming.docx |
 
 ## Table of Contents
@@ -16,26 +16,23 @@
 - [2. Commit History Statistics](#2-commit-history-statistics)
 - [3. Implementation Approach](#3-implementation-approach)
 - [4. Screenshots and Video](#4-screenshots-and-video)
-- [5. Team Division and Contribution](#5-team-division-and-contribution)
-- [6. Cooperation Challenges and Solutions](#6-cooperation-challenges-and-solutions)
-- [7. PSP Time Table](#7-psp-time-table)
+- [5. PSP Time Table](#5-psp-time-table)
 
 ---
 
 ## 1. Project Links
 
-- GitHub repository: (Paste repository link)
+- GitHub repository: https://github.com/sq18867721140-del/address-book
 - Cloud deployment URL (optional extra-credit item): (Paste public URL; localhost does not count)
 - Other links: (Code style guide, Release tag link, etc.)
 
 ## 2. Commit History Statistics
 
-> Paste the GitHub commit history screenshot here, and fill in the number of commits per member.
+> Paste the GitHub commit history screenshot here, and fill in the total number of commits.
 
-| Member | Commits | Main Contributions |
+| Author | Commits | Main Contributions |
 | --- | --- | --- |
-| Member A |  |  |
-| Member B |  |  |
+| sq18867721140-del |  |  |
 
 ## 3. Implementation Approach
 
@@ -82,26 +79,7 @@
 
 > Attach a complete demo video link or file showing: create a contact → add multiple methods → favorite and pin → export Excel → import Excel.
 
-## 5. Team Division and Contribution
-
-> The two members' contribution percentages must sum to 100%.
-
-| Member | Responsible Modules | Contribution |
-| --- | --- | --- |
-| Member A |  |  % |
-| Member B |  |  % |
-| Total |  | 100% |
-
-## 6. Cooperation Challenges and Solutions
-
-| Challenge | Solution |
-| --- | --- |
-| (e.g., Git merge conflicts) | (e.g., agreed on a branch strategy, pull rebase before committing, both sides confirmed conflicts before merging) |
-|  |  |
-
-## 7. PSP Time Table
-
-> One table per member; this is Member A's table. Member B should copy it and fill in separately.
+## 5. PSP Time Table
 
 | PSP Phase | Estimated Time (min) | Actual Time (min) |
 | --- | --- | --- |

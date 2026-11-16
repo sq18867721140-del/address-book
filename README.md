@@ -47,11 +47,6 @@ address-book/
     └── form.html           # Create / edit form
 ```
 
-## Team Division (two-person team)
+## Project Type
 
-> Fill in the actual division before submitting code.
-
-| Member | Responsible Modules |
-| --- | --- |
-| Member A |  |
-| Member B |  |
+Individual project completed by one student.
