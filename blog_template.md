@@ -78,11 +78,21 @@
 
 ### 4.1 Screenshots
 
-- Contact list page: (Paste screenshot)
-- Create / edit form page: (Paste screenshot)
-- Favorites pinned on top: (Paste screenshot)
-- Exported Excel content: (Paste screenshot)
-- Import result: (Paste screenshot)
+**Contact list page (favorite pinned on top, multiple methods per contact):**
+
+![Contact list](screenshots/list-page.png)
+
+**Create / edit form page (multiple contact methods, add/remove dynamically):**
+
+![Contact form](screenshots/form-page.png)
+
+**Exported Excel content:**
+
+![Exported Excel](screenshots/export-excel.png)
+
+**Import result:**
+
+![Import result](screenshots/import-result.png)
 
 ### 4.2 Full Running Video
 
