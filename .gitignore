@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 数据库实例文件（本地数据，不入库）
+instance/*.db
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db

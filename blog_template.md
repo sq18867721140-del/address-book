@@ -1,0 +1,113 @@
+# EE308 Extreme Programming Assignment: Address Book System
+
+## Assignment Description
+
+| Item | Content |
+| --- | --- |
+| Course for This Assignment | Software Engineering (FZU–MU) |
+| Team Name | (Fill in team name) |
+| Assignment Requirements | Build a web address book: favorite contacts, bind multiple contact methods to one contact, Excel import/export, optional cloud deployment; complete collaborative Git development and submit an individual blog. |
+| Objectives of This Assignment | Experience the extreme programming and team development workflow; practice module division, Git version control, feature design rationale, and project retrospective. |
+| Other References | Flask official docs, openpyxl docs, Bootstrap docs; course requirement Programming.docx |
+
+## Table of Contents
+
+- [1. Project Links](#1-project-links)
+- [2. Commit History Statistics](#2-commit-history-statistics)
+- [3. Implementation Approach](#3-implementation-approach)
+- [4. Screenshots and Video](#4-screenshots-and-video)
+- [5. Team Division and Contribution](#5-team-division-and-contribution)
+- [6. Cooperation Challenges and Solutions](#6-cooperation-challenges-and-solutions)
+- [7. PSP Time Table](#7-psp-time-table)
+
+---
+
+## 1. Project Links
+
+- GitHub repository: (Paste repository link)
+- Cloud deployment URL (optional extra-credit item): (Paste public URL; localhost does not count)
+- Other links: (Code style guide, Release tag link, etc.)
+
+## 2. Commit History Statistics
+
+> Paste the GitHub commit history screenshot here, and fill in the number of commits per member.
+
+| Member | Commits | Main Contributions |
+| --- | --- | --- |
+| Member A |  |  |
+| Member B |  |  |
+
+## 3. Implementation Approach
+
+### 3.1 Module Division
+
+- Data layer: two SQLite tables, `contact` and `contact_method` (one-to-many).
+- Business layer: Flask routes handle CRUD, favorite toggle, and Excel read/write.
+- Presentation layer: Jinja2 templates + Bootstrap render the list and form.
+
+### 3.2 Favorite Contacts (25 points)
+
+- The `is_favorite` field marks a contact; the list query sorts by `is_favorite DESC` so favorites appear on top.
+- Clicking "Favorite / Unfavorite" toggles the flag and refreshes the star and button label.
+
+### 3.3 Multiple Contact Methods (10 points)
+
+- One contact has many methods, typed as phone, email, social, or address.
+- The form groups methods by type; multiple entries can be added or removed dynamically; they are saved to the database in batches by type.
+
+### 3.4 Excel Import / Export (25 points)
+
+- Export: openpyxl generates `contacts.xlsx` with headers Name / Phone / Email / Social / Address / Note / Favorite, one row per contact; multiple methods of the same type are separated by line breaks in the cell.
+- Import: reads a file in the same format, locates columns by header, skips rows without a name, and appends valid records; line breaks in a cell are split into separate methods.
+
+### 3.5 Page Style (10 points)
+
+- Bootstrap 5 card layout, top navigation bar, flash messages, favorite star and button state indicators.
+
+### 3.6 Cloud Deployment (Optional +15)
+
+> If completed: record the cloud vendor, deployment method (Gunicorn + Nginx, etc.) and public URL. Delete this section if skipped.
+
+## 4. Screenshots and Video
+
+### 4.1 Screenshots
+
+- Contact list page: (Paste screenshot)
+- Create / edit form page: (Paste screenshot)
+- Favorites pinned on top: (Paste screenshot)
+- Exported Excel content: (Paste screenshot)
+- Import result: (Paste screenshot)
+
+### 4.2 Full Running Video
+
+> Attach a complete demo video link or file showing: create a contact → add multiple methods → favorite and pin → export Excel → import Excel.
+
+## 5. Team Division and Contribution
+
+> The two members' contribution percentages must sum to 100%.
+
+| Member | Responsible Modules | Contribution |
+| --- | --- | --- |
+| Member A |  |  % |
+| Member B |  |  % |
+| Total |  | 100% |
+
+## 6. Cooperation Challenges and Solutions
+
+| Challenge | Solution |
+| --- | --- |
+| (e.g., Git merge conflicts) | (e.g., agreed on a branch strategy, pull rebase before committing, both sides confirmed conflicts before merging) |
+|  |  |
+
+## 7. PSP Time Table
+
+> One table per member; this is Member A's table. Member B should copy it and fill in separately.
+
+| PSP Phase | Estimated Time (min) | Actual Time (min) |
+| --- | --- | --- |
+| Planning · Requirements understanding and estimation |  |  |
+| Design · Module division and data model |  |  |
+| Coding · Feature implementation |  |  |
+| Testing · Self-test and bug fixing |  |  |
+| Recording · Blog writing and material preparation |  |  |
+| Total |  |  |
