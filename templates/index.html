@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Excel import form -->
+<form class="row g-2 mb-4 align-items-center" method="POST" action="{{ url_for('import_excel') }}" enctype="multipart/form-data">
+  <div class="col-auto">
+    <input type="file" name="file" accept=".xlsx,.xls" class="form-control form-control-sm" required>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary btn-sm">Import Excel</button>
+  </div>
+  <div class="col-auto text-muted small">Expected columns: Name / Phone / Email / Social / Address / Note / Favorite</div>
+</form>
+
+{% if contacts %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+  {% for item in contacts %}
+  {% set c = item.contact %}
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+          <h5 class="card-title mb-1">
+            {% if c.is_favorite %}<span class="text-warning">&#9733;</span>{% endif %}
+            {{ c.name }}
+          </h5>
+          <form method="POST" action="{{ url_for('toggle_favorite', contact_id=c.id) }}">
+            <button type="submit" class="btn btn-sm {% if c.is_favorite %}btn-outline-warning{% else %}btn-outline-secondary{% endif %}">
+              {{ 'Unfavorite' if c.is_favorite else 'Favorite' }}
+            </button>
+          </form>
+        </div>
+        {% if c.note %}<p class="text-muted small mb-2">{{ c.note }}</p>{% endif %}
+
+        <ul class="list-unstyled mb-3">
+          {% for type_key, label in method_types %}
+            {% for v in item.methods[type_key] %}
+            <li class="small">
+              <span class="badge bg-light text-dark me-1">{{ label }}</span>{{ v }}
+            </li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+
+        <div class="d-flex gap-2">
+          <a class="btn btn-sm btn-outline-primary" href="{{ url_for('contact_edit', contact_id=c.id) }}">Edit</a>
+          <form method="POST" action="{{ url_for('contact_delete', contact_id=c.id) }}"
+                onsubmit="return confirm('Delete {{ c.name }}?');">
+            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5 text-muted">
+  <p>No contacts yet. Click "+ New Contact" in the top right to start.</p>
+</div>
+{% endif %}
+
+{% endblock %}

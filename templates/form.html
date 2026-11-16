@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <h4 class="mb-3">{{ 'Edit Contact' if contact else 'New Contact' }}</h4>
+    <form method="POST">
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <label class="form-label">Name <span class="text-danger">*</span></label>
+            <input type="text" name="name" class="form-control" required
+                   value="{{ contact.name if contact else '' }}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Note</label>
+            <textarea name="note" rows="2" class="form-control">{{ contact.note if contact else '' }}</textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" name="is_favorite" class="form-check-input" id="fav"
+                   {% if contact and contact.is_favorite %}checked{% endif %}>
+            <label class="form-check-label" for="fav">Mark as favorite</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multiple methods: several entries per type can be added dynamically -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h6 class="mb-3">Contact Methods</h6>
+          {% for type_key, label in method_types %}
+          <div class="mb-3">
+            <label class="form-label text-muted">{{ label }}</label>
+            <div class="method-group" data-type="{{ type_key }}">
+              {% set values = methods[type_key] %}
+              {% if values %}
+                {% for v in values %}
+                <div class="input-group mb-2">
+                  <input type="text" name="{{ type_key }}" class="form-control" value="{{ v }}">
+                  <button type="button" class="btn btn-outline-danger remove-method">Remove</button>
+                </div>
+                {% endfor %}
+              {% else %}
+                <div class="input-group mb-2">
+                  <input type="text" name="{{ type_key }}" class="form-control">
+                  <button type="button" class="btn btn-outline-danger remove-method">Remove</button>
+                </div>
+              {% endif %}
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary add-method"
+                    data-type="{{ type_key }}">+ Add another {{ label }}</button>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+// Add / remove multiple entries of the same method type
+document.querySelectorAll('.add-method').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const group = document.querySelector(`.method-group[data-type="${btn.dataset.type}"]`);
+    const row = document.createElement('div');
+    row.className = 'input-group mb-2';
+    row.innerHTML = `
+      <input type="text" name="${btn.dataset.type}" class="form-control">
+      <button type="button" class="btn btn-outline-danger remove-method">Remove</button>`;
+    group.appendChild(row);
+  });
+});
+
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('remove-method')) {
+    const group = e.target.closest('.method-group');
+    if (group.querySelectorAll('.input-group').length > 1) {
+      e.target.closest('.input-group').remove();
+    } else {
+      e.target.closest('.input-group').querySelector('input').value = '';
+    }
+  }
+});
+</script>
+{% endblock %}
