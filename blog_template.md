@@ -24,15 +24,24 @@
 
 - GitHub repository: https://github.com/sq18867721140-del/address-book
 - Cloud deployment URL (optional extra-credit item): (Paste public URL; localhost does not count)
-- Other links: (Code style guide, Release tag link, etc.)
+- Code style guide: [codestyle.md](codestyle.md)
+- Other links: (Release tag link, etc.)
 
 ## 2. Commit History Statistics
 
-> Paste the GitHub commit history screenshot here, and fill in the total number of commits.
+> Total commits: **10** (all by the repository owner). Screenshots of the GitHub commit history are shown below.
 
 | Author | Commits | Main Contributions |
 | --- | --- | --- |
-| sq18867721140-del |  |  |
+| sq18867721140-del | 10 | Backend routes, favorite, multiple methods, Excel import/export, search filter, templates, documentation |
+
+**Commit history (top):**
+
+![Commit history top](screenshots/commit-history.png)
+
+**Commit history (bottom):**
+
+![Commit history bottom](screenshots/commit-history-bottom.png)
 
 ## 3. Implementation Approach
 
