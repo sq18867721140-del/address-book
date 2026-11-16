@@ -29,11 +29,11 @@
 
 ## 2. Commit History Statistics
 
-> Total commits: **10** (all by the repository owner). Screenshots of the GitHub commit history are shown below.
+> Total commits: **13** (all by the repository owner). Screenshots of the GitHub commit history are shown below.
 
 | Author | Commits | Main Contributions |
 | --- | --- | --- |
-| sq18867721140-del | 10 | Backend routes, favorite, multiple methods, Excel import/export, search filter, templates, documentation |
+| sq18867721140-del | 13 | Backend routes, favorite, multiple methods, Excel import/export, search filter, templates, documentation |
 
 **Commit history (top):**
 
@@ -98,13 +98,9 @@
 
 The complete demo shows: create a contact → add multiple methods → favorite and pin → export Excel → import Excel.
 
-<video controls width="100%">
-  <source src="videos/demo-video.mp4" type="video/mp4">
-  Your browser does not support the video tag. Please download the video:
-  <a href="videos/demo-video.mp4">videos/demo-video.mp4</a>
-</video>
+**Demo video (Aliyun Drive):** [https://www.alipan.com/s/UCLcbKuiD3W](https://www.alipan.com/s/UCLcbKuiD3W)
 
-> Note: the video file is large; if the GitHub repository cannot hold it, upload it to a cloud drive / video host and paste the public link here instead.
+> The video file is too large to store in the GitHub repository, so it is hosted on Aliyun Drive. Open the link above to watch or download the full demo.
 
 ## 5. PSP Time Table
 
